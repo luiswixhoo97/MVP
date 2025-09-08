@@ -112,6 +112,7 @@ watch(() => [isVisible.value], () => {
       v-if="showCursor"
       ref="cursorRef"
       class="text-type__cursor"
+      :style="{ '--cursor-blink-duration': cursorBlinkDuration + 'ms' }"
       :class="{ 'text-type__cursor--hidden': hideCursorWhileTyping && (currentCharIndex < (textArray[currentTextIndex] || '').length || isDeleting) }"
     >{{ cursorCharacter }}</span>
   </span>

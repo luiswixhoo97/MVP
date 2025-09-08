@@ -33,26 +33,24 @@
       </div>
       <div class="container mx-auto px-8 mt-4">
         <div class="flex flex-col lg:flex-row items-start lg:items-center gap-10 lg:gap-14 xl:gap-24">
-          <div class="space-y-8 animate-fade-in-up self-start flex-1 max-w-2xl">
-            <h1 class="text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
-              <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent whitespace-normal sm:whitespace-nowrap">
-                Impulsa tu marca
-              </span>
-              <span class="block text-gray-800 mt-2">
+          <div class="space-y-7 animate-fade-in-up self-start flex-1 max-w-3xl">
+            <h1 class="text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tight">
+              <span class="text-gray-900 reveal-up block whitespace-nowrap">La nueva generación del</span>
+              <span class="block bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent reveal-up delay-200 whitespace-nowrap">
                 <TextType
-                  text="al siguiente nivel"
-                  :typingSpeed="120"
+                  text="Marketing Digital"
+                  :typingSpeed="75"
                   :pauseDuration="1500"
                   :showCursor="true"
-                  :loop="true"
                   cursorCharacter="|"
+                  :loop="true"
                 />
               </span>
+              <span class="text-gray-900 font-extrabold reveal-up delay-400 block whitespace-nowrap">en México</span>
             </h1>
             
-            <p class="text-xl text-gray-600 leading-relaxed">
-              Somos MVP DIGITAL, tu agencia de marketing digital en Guadalajara. 
-              Transformamos ideas en estrategias exitosas que conectan con tu audiencia.
+            <p class="text-xl text-muted-foreground mb-8 text-pretty max-w-2xl lg:mx-0 mx-auto reveal-up delay-600">
+              Conectamos marcas con audiencias a través de estrategias auténticas, creativas y efectivas. Somos especialistas en emprendedores y PYMEs que buscan crecer, destacar y convertir.
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4">
@@ -65,8 +63,74 @@
             </div>
           </div>
 
-          <div class="relative self-start lg:self-auto animate-fade-in-right w-fit lg:ml-44 xl:ml-50 shrink-0 scale-[1.03] lg:scale-125 lg:-mt-12 xl:-mt-12">
+          <div class="relative self-start lg:self-auto animate-fade-in-right w-fit lg:ml-55 xl:ml-70 2xl:ml-80 shrink-0 scale-[1.03] lg:scale-125 lg:-mt-12 xl:-mt-12">
             <PhoneShowcase />
+          </div>
+        </div>
+      </div>
+    </section>
+
+     Historia Section 
+    <section id="historia" class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-14">
+          <h2 class="text-5xl lg:text-6xl font-extrabold mb-4">
+            <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">Nuestra Historia</span>
+          </h2>
+          <p class="text-gray-700 text-lg max-w-3xl mx-auto">Más de una década conectando marcas con audiencias de manera auténtica y estratégica</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 items-stretch">
+          <!-- Columna izquierda -->
+          <div class="bg-white rounded-2xl shadow-xl p-7 lg:p-9 h-full">
+            <h3 class="text-2xl font-extrabold text-gray-900 mb-2">MVP DIGITAL</h3>
+            <p class="text-base text-gray-500 mb-6">Agencia de marketing integral</p>
+            <p class="text-gray-700 text-base leading-relaxed mb-6">Nace de la visión estratégica de nuestro CEO, quien tras liderar campañas para grandes marcas en México decidió crear una agencia que conectara a las marcas con el mundo digital y tradicional de manera auténtica, estratégica y efectiva.</p>
+
+            <div class="bg-gradient-to-r from-pink-50 to-orange-50 rounded-xl p-5 ring-1 ring-pink-100">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="w-6 h-6 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 inline-flex items-center justify-center text-white text-xs">✦</span>
+                <span class="font-semibold text-gray-900">MVP MARKETING</span>
+              </div>
+              <p class="text-gray-700 text-sm">Nuestra división especializada en emprendedores y PYMEs aplica la experiencia acumulada en campañas nacionales e internacionales a negocios que buscan crecer desde cero.</p>
+            </div>
+          </div>
+
+          <!-- Columna derecha -->
+          <div class="space-y-6">
+            <!-- Stats aligned cards -->
+            <div class="grid grid-cols-3 gap-5 mb-3 items-stretch">
+              <div class="bg-white rounded-xl shadow-lg p-7 text-center flex flex-col justify-center min-h-[110px]">
+                <div class="text-5xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">{{ histYears }}+</div>
+                <div class="text-sm text-gray-600 mt-1">Años de experiencia</div>
+              </div>
+              <div class="bg-white rounded-xl shadow-lg p-7 text-center flex flex-col justify-center min-h-[110px]">
+                <div class="text-5xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">{{ histProjects }}+</div>
+                <div class="text-sm text-gray-600 mt-1">Proyectos exitosos</div>
+              </div>
+              <div class="bg-white rounded-xl shadow-lg p-7 text-center flex flex-col justify-center min-h-[110px]">
+                <div class="text-5xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">{{ histClients }}+</div>
+                <div class="text-sm text-gray-600 mt-1">Clientes satisfechos</div>
+              </div>
+            </div>
+
+            <!-- Misión -->
+            <div class="bg-white rounded-2xl shadow-xl p-7">
+              <div class="flex items-center gap-4 mb-3">
+                <span class="w-10 h-10 rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 inline-flex items-center justify-center text-white">🎯</span>
+                <h4 class="text-xl font-extrabold text-gray-900">Nuestra Misión</h4>
+              </div>
+              <p class="text-gray-700 text-base leading-relaxed">Consolidar la presencia digital de marcas nacientes y posicionadas mediante estrategias efectivas, conectando con las audiencias correctas en México, USA y Latinoamérica.</p>
+            </div>
+
+            <!-- Visión -->
+            <div class="bg-white rounded-2xl shadow-xl p-7">
+              <div class="flex items-center gap-4 mb-3">
+                <span class="w-10 h-10 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 inline-flex items-center justify-center text-white">📈</span>
+                <h4 class="text-xl font-extrabold text-gray-900">Nuestra Visión</h4>
+              </div>
+              <p class="text-gray-700 text-base leading-relaxed">Ser la agencia líder en México en conectar marcas con comunidades digitales mediante contenido auténtico y colaboraciones estratégicas.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -76,6 +140,9 @@
     <section id="servicios" class="py-0">
       <ServicesSection />
     </section>
+
+     Valores Section 
+    <ValuesSection />
 
      About Section 
     <section id="nosotros" class="py-20">
@@ -226,10 +293,11 @@
 </template>
 
 <script setup>
-import TextType from './components/TextType.vue'
 import PhoneShowcase from './components/PhoneShowcase.vue'
 import ServicesSection from './components/ServicesSection.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
+import ValuesSection from './components/ValuesSection.vue'
+import TextType from './components/TextType.vue'
 
 const services = ref([
   {
@@ -264,6 +332,25 @@ const services = ref([
   }
 ])
 
+// Historia counters
+const histYears = ref(0)
+const histProjects = ref(0)
+const histClients = ref(0)
+
+onMounted(() => {
+  // Animated counters for historia section
+  const duration = 1200
+  const start = performance.now()
+  const animate = (now) => {
+    const p = Math.min(1, (now - start) / duration)
+    histYears.value = Math.floor(12 * p)
+    histProjects.value = Math.floor(500 * p)
+    histClients.value = Math.floor(200 * p)
+    if (p < 1) requestAnimationFrame(animate)
+  }
+  requestAnimationFrame(animate)
+})
+
 onMounted(() => {
   // Add scroll animations
   const observerOptions = {
@@ -288,6 +375,40 @@ onUnmounted(() => {})
 </script>
 
 <style scoped>
+/* Visible gradient text helper to avoid inherited text-transparent issues */
+.gradient-text {
+  background-image: linear-gradient(90deg, #7c3aed, #ec4899, #f59e0b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease-in-out infinite alternate;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+@keyframes revealUp {
+  0% { opacity: 0; transform: translateY(18px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.reveal-up { opacity: 0; animation: revealUp .7s ease forwards; }
+.reveal-up.delay-200 { animation-delay: .2s; }
+.reveal-up.delay-400 { animation-delay: .4s; }
+.reveal-up.delay-600 { animation-delay: .6s; }
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+@keyframes revealUp {
+  0% { opacity: 0; transform: translateY(18px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.reveal-up { opacity: 0; animation: revealUp .7s ease forwards; }
+.reveal-up.delay-200 { animation-delay: .2s; }
+.reveal-up.delay-400 { animation-delay: .4s; }
+.reveal-up.delay-600 { animation-delay: .6s; }
+.gradient-animated { background-size: 200% 200%; animation: gradientShift 6s ease-in-out infinite alternate; }
 @keyframes blobMove {
   0%, 100% {
     transform: translate3d(0, 0, 0) scale(1);
