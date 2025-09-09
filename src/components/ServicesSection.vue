@@ -2,21 +2,21 @@
     <div class="min-h-screen bg-white py-24">
       <div class="container mx-auto px-6">
          
-        <div class="text-center mb-16">
-          <h1 class="text-5xl lg:text-6xl font-bold mb-4">
+        <div class="text-center mb-12 sm:mb-16 px-2">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
             <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">Nuestros Servicios</span>
           </h1>
         </div>
   
           
         <div class="space-y-12">
-          
+           
           <!-- Campañas Ads Meta y Google (primero) -->
-          <div class="glass p-10 lg:p-12 hover:shadow-2xl transition-all duration-500">
-            <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="glass p-6 sm:p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+            <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div class="order-2 lg:order-2">
-                <h3 class="text-4xl font-bold text-gray-900 mb-4">Campañas Ads Meta y Google</h3>
-                <p class="text-gray-700 mb-6 leading-relaxed max-w-[70ch]">Campañas en Meta (Facebook, Instagram) y Google Ads con enfoque 100% orientado a resultados: alcance, leads y ventas.</p>
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Campañas Ads Meta y Google</h3>
+                <p class="text-gray-700 mb-5 sm:mb-6 leading-relaxed">Campañas en Meta (Facebook, Instagram) y Google Ads con enfoque 100% orientado a resultados: alcance, leads y ventas.</p>
                 <ul class="space-y-3 mb-8">
                   <li class="flex items-center text-gray-700">
                     <span class="text-orange-500 mr-3 text-lg">→</span>
@@ -31,11 +31,11 @@
                     Generación de leads y ventas
                   </li>
                 </ul>
-                <button class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                  Empezar ahora
-                </button>
+                <a :href="whatsAppUrl('Campañas Ads Meta y Google')" target="_blank" class="bg-gradient-to-r from-orange-500 to-red-500 text-white mx-auto lg:mx-0 w-fit px-8 py-4 rounded-xl font-semibold hover:from-orange-600 hover:to-red-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                  Contactanos
+                </a>
               </div>
-              <div class="w-full h-80 rounded-2xl p-4 md:p-6 relative shadow-xl order-1 lg:order-2 bg-white ads-sim">
+              <div class="w-full h-72 sm:h-80 rounded-2xl p-4 md:p-6 relative shadow-xl order-1 lg:order-2 bg-white ads-sim">
                 <div class="ads-body">
                   <div class="channels">
                     <div v-for="ch in channels" :key="ch.name" class="channel-row">
@@ -66,19 +66,19 @@
           </div>
           
           <!-- Representación de creadores -->
-          <div class="glass p-10 lg:p-12 hover:shadow-2xl transition-all duration-500">
-            <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="glass p-6 sm:p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+            <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div class="order-2 lg:order-2">
-                <h3 class="text-4xl font-bold text-gray-900 mb-4">Representación de Creadores</h3>
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Representación de Creadores</h3>
                 <p class="text-gray-700 mb-6 leading-relaxed max-w-[70ch]">Representamos talento y creadores de contenido para campañas con objetivos claros. Velamos por acuerdos justos, entregables de calidad y resultados medibles.</p>
                 <ul class="space-y-3 mb-8">
                   <li class="flex items-center text-gray-700"><span class="text-purple-500 mr-3 text-lg">→</span>Selección y casting según audiencia y briefing</li>
                   <li class="flex items-center text-gray-700"><span class="text-purple-500 mr-3 text-lg">→</span>Negociación, contratos y gestión de derechos</li>
                   <li class="flex items-center text-gray-700"><span class="text-purple-500 mr-3 text-lg">→</span>Coordinación de entregables y reporting</li>
                 </ul>
-                <button class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-lg">Contactar talento</button>
+                <a :href="whatsAppUrl('Representación de Creadores')" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white mx-auto lg:mx-0 w-fit px-8 py-4 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-lg">Contactanos</a>
               </div>
-              <div class="w-full h-80 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-3 md:p-4 shadow-xl order-1 lg:order-1 overflow-hidden relative">
+              <div class="w-full h-72 sm:h-80 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-3 md:p-4 shadow-xl order-1 lg:order-1 overflow-hidden relative">
                 <div class="creator-carousel" @mouseenter="isCarouselHovered = true" @mouseleave="isCarouselHovered = false">
                   <div class="creator-track" :style="{ '--offsetX': `${-carouselIndex * (cardWidthPx + gapPx)}px` }">
                     <div v-for="card in creatorsCarousel" :key="card.name" class="creator-card">
@@ -109,19 +109,19 @@
           </div>
 
           <!-- Producción de contenido audiovisual -->
-          <div class="glass p-10 lg:p-12 hover:shadow-2xl transition-all duration-500">
-            <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="glass p-6 sm:p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+            <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div class="order-2 lg:order-1">
-                <h3 class="text-4xl font-bold text-gray-900 mb-4">Producción de Contenido Audiovisual</h3>
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Producción de Contenido Audiovisual</h3>
                 <p class="text-gray-700 mb-6 leading-relaxed max-w-[70ch]">Concepto, guion, grabación, edición y postproducción. Piezas diseñadas para captar atención y convertir, desde corporativos hasta contenido social.</p>
                 <ul class="space-y-3 mb-8">
                   <li class="flex items-center text-gray-700"><span class="text-blue-500 mr-3 text-lg">→</span>Videos corporativos y comerciales</li>
                   <li class="flex items-center text-gray-700"><span class="text-blue-500 mr-3 text-lg">→</span>Contenido dinámico para redes</li>
                   <li class="flex items-center text-gray-700"><span class="text-blue-500 mr-3 text-lg">→</span>Estándares de excelencia visual</li>
                 </ul>
-                <button class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-lg">Solicitar producción</button>
+                <a :href="whatsAppUrl('Producción de Contenido Audiovisual')" target="_blank" class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white mx-auto lg:mx-0 w-fit px-8 py-4 rounded-xl font-semibold hover:from-blue-600 hover:to-cyan-600 transform hover:scale-105 transition-all duration-300 shadow-lg">Contactanos</a>
               </div>
-              <div class="w-full h-80 rounded-2xl p-0 relative shadow-xl overflow-hidden bg-white order-1 lg:order-2 yt-sim">
+              <div class="w-full h-72 sm:h-80 rounded-2xl p-0 relative shadow-xl overflow-hidden bg-white order-1 lg:order-2 yt-sim">
                 <div class="yt-screen">
                   <div class="yt-overlay"></div>
                   <div class="yt-play">
@@ -150,10 +150,10 @@
           </div>
 
           <!-- Community Management -->
-          <div class="glass p-10 lg:p-12 hover:shadow-2xl transition-all duration-500">
-            <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="glass p-6 sm:p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+            <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
               <!-- Visual left: chat/feed simulation -->
-              <div class="w-full h-80 bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-4 relative shadow-xl order-1 lg:order-1 overflow-hidden">
+              <div class="w-full h-72 sm:h-80 bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-4 relative shadow-xl order-1 lg:order-1 overflow-hidden">
                 <div class="cm-sim">
                   <div class="cm-header">
                     <div class="cm-avatar"></div>
@@ -182,17 +182,17 @@
                   <li class="flex items-center text-gray-700"><span class="text-purple-500 mr-3 text-lg">→</span>Monitoreo y respuesta a la comunidad</li>
                   <li class="flex items-center text-gray-700"><span class="text-purple-500 mr-3 text-lg">→</span>Consistencia de marca y crecimiento orgánico</li>
                 </ul>
-                <button class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-lg">Gestionar redes</button>
+                <a :href="whatsAppUrl('Community Management')" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white mx-auto lg:mx-0 w-fit px-8 py-4 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-lg">Contactanos</a>
               </div>
             </div>
           </div>
           <!-- Contratación de Medios ON & OFF moved later -->
 
           <!-- Contratación de Medios ON & OFF (colocado al final para alternar entradas) -->
-          <div class="glass p-10 lg:p-12 hover:shadow-2xl transition-all duration-500">
-            <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="glass p-6 sm:p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+            <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div class="order-2 lg:order-1">
-                <h3 class="text-4xl font-bold text-gray-900 mb-4">Contratación de medios publicitarios ON & OFF</h3>
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Contratación de medios publicitarios ON & OFF</h3>
                 <p class="text-gray-700 mb-6 leading-relaxed max-w-[70ch]">Acceso a una red estratégica de medios digitales y tradicionales con cobertura a nivel nacional para visibilidad y posicionamiento.</p>
                 <ul class="space-y-3 mb-8">
                   <li class="flex items-center text-gray-700">
@@ -208,11 +208,11 @@
                     Planeación, negociación, ejecución y reportes con evidencia y métricas
                   </li>
                 </ul>
-                <button class="bg-gradient-to-r from-pink-500 to-orange-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-pink-600 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                  Cotizar medios
-                </button>
+                <a :href="whatsAppUrl('Contratación de Medios ON & OFF')" target="_blank" class="bg-gradient-to-r from-pink-500 to-orange-500 text-white mx-auto lg:mx-0 w-fit px-8 py-4 rounded-xl font-semibold hover:from-pink-600 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                  Contactanos
+                </a>
               </div>
-              <div class="w-full h-80 bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl p-0 relative shadow-xl order-1 lg:order-2 media-sim">
+              <div class="w-full h-72 sm:h-80 bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl p-0 relative shadow-xl order-1 lg:order-2 media-sim">
                 <div class="map">
                   <div v-for="site in mediaSites" :key="site.id" class="site" :class="{ active: site.active }" :style="{ left: site.x + '%', top: site.y + '%' }">
                     <div class="panel"></div>
@@ -231,10 +231,10 @@
             </div>
           </div>
            
-          <div class="glass p-10 lg:p-12 hover:shadow-2xl transition-all duration-500">
-            <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="glass p-6 sm:p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+            <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div class="order-2 lg:order-2">
-                <h3 class="text-4xl font-bold text-gray-900 mb-4">Desarrollo Web</h3>
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Desarrollo Web</h3>
                 <p class="text-gray-700 mb-6 leading-relaxed max-w-[70ch]">Creamos sitios web modernos, funcionales y diseñados estratégicamente para convertir visitantes en clientes, con foco en UX/UI, velocidad y SEO.</p>
                 <ul class="space-y-3 mb-8">
                   <li class="flex items-center text-gray-700">
@@ -250,11 +250,11 @@
                     SEO técnico y performance
                   </li>
                 </ul>
-                <button class="bg-gradient-to-r from-pink-500 to-orange-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-pink-600 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                  Empezar ahora
-                </button>
+                <a :href="whatsAppUrl('Desarrollo Web')" target="_blank" class="bg-gradient-to-r from-pink-500 to-orange-500 text-white mx-auto lg:mx-0 w-fit px-8 py-4 rounded-xl font-semibold hover:from-pink-600 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                  Contactanos
+                </a>
               </div>
-              <div class="w-full h-80 bg-white rounded-2xl p-6 relative overflow-hidden shadow-xl order-1 lg:order-1 lg:order-first">
+              <div class="w-full h-72 sm:h-80 bg-white rounded-2xl p-6 relative overflow-hidden shadow-xl order-1 lg:order-1 lg:order-first">
                 <div class="bg-white rounded-xl w-full h-full overflow-hidden relative page-sim">
                   <div class="nav-sim" :class="{ 'is-visible': buildStep >= 1 }">
                     <div class="brand-sim" :class="{ 'is-visible': buildStep >= 2 }"></div>
@@ -289,10 +289,10 @@
           </div>
   
             
-          <div class="glass p-10 lg:p-12 hover:shadow-2xl transition-all duration-500">
-            <div class="grid lg:grid-cols-2 gap-8 items-center">
-              <div class="order-1 lg:order-1">
-                <h3 class="text-4xl font-bold text-gray-900 mb-4">Influencer Marketing y UGC</h3>
+          <div class="glass p-6 sm:p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+            <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+              <div class="order-2 lg:order-1">
+                <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Influencer Marketing y UGC</h3>
                 <p class="text-gray-700 mb-6 leading-relaxed max-w-[70ch]">Conectamos marcas con creadores adecuados para contenido auténtico y relevante. Selección, negociación, producción y medición integral.</p>
                 <ul class="space-y-3 mb-8">
                   <li class="flex items-center text-gray-700">
@@ -308,16 +308,16 @@
                     Medición de resultados y optimización
                   </li>
                 </ul>
-                <button class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                  Empezar ahora
-                </button>
+                <a :href="whatsAppUrl('Influencer Marketing y UGC')" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white mx-auto lg:mx-0 w-fit px-8 py-4 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                  Contactanos
+                </a>
               </div>
-              <div class="w-full h-80 rounded-2xl p-3 relative overflow-hidden shadow-xl order-2 lg:order-2 im-metrics-frame">
+              <div class="w-full h-72 sm:h-80 rounded-2xl p-3 relative overflow-hidden shadow-xl order-1 lg:order-2 im-metrics-frame">
                 <div class="im-card">
                   <div class="im-header">
                     <span class="title">Social Dashboard</span>
                     <span class="dot green"></span>
-                  </div>
+            </div>
                   <div class="im-top">
                     <div class="stat-card">
                       <div class="label">Seguidores</div>
@@ -327,12 +327,12 @@
                       <div class="label">Engagement</div>
                       <div class="value">{{ imEngagement.toFixed(1) }}%</div>
                     </div>
-                  </div>
+                      </div>
                   <div class="reach-card">
                     <div class="label">Alcance Semanal</div>
                     <div class="value">{{ imReach.toLocaleString() }}</div>
                     <div class="bar"><div class="fill" :style="{ width: Math.min(100, Math.round((imReach/imGoal)*100)) + '%' }"></div></div>
-                  </div>
+                    </div>
                   <div class="im-footer">
                     <div class="delta">⚡ {{ imDelta }} vs semana anterior</div>
                     <div class="goal">🎯 Meta: {{ imGoal/1000 }}K</div>
@@ -348,7 +348,7 @@
            
           <div class="glass p-10 lg:p-12 hover:shadow-2xl transition-all duration-500">
             <div class="grid lg:grid-cols-2 gap-8 items-center">
-              <div class="w-full h-80 bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 relative shadow-xl order-2 lg:order-1">
+              <div class="w-full h-80 bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 relative shadow-xl order-1 lg:order-1">
                 <div class="text-center">
                   <h4 class="text-xl font-bold text-gray-800 mb-6">Paleta de Colores</h4>
                   <div class="grid grid-cols-4 gap-4 mb-6">
@@ -364,7 +364,7 @@
                   </div>
                 </div>
               </div>
-              <div class="order-1 lg:order-2">
+              <div class="order-2 lg:order-2">
                 <h3 class="text-4xl font-bold text-gray-900 mb-4">Branding y diseño gráfico</h3>
                 <p class="text-gray-700 mb-6 leading-relaxed max-w-[70ch]">Definimos identidad visual y conceptual que transmite confianza, profesionalismo y diferenciación.</p>
                 <ul class="space-y-3 mb-8">
@@ -381,9 +381,9 @@
                     Piezas gráficas para campañas y redes
                   </li>
                 </ul>
-                <button class="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-600 hover:to-indigo-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                  Empezar ahora
-                </button>
+                <a :href="whatsAppUrl('Branding y diseño gráfico')" target="_blank" class="bg-gradient-to-r from-purple-500 to-indigo-500 text-white mx-auto lg:mx-0 w-fit px-8 py-4 rounded-xl font-semibold hover:from-purple-600 hover:to-indigo-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                  Contactanos
+                </a>
               </div>
             </div>
           </div>
@@ -400,6 +400,13 @@
   
   // Desarrollo Web Timelapse
   const buildStep = ref(0)
+
+  // WhatsApp helper
+  const waPhone = '523312345678'
+  const whatsAppUrl = (service) => {
+    const msg = service ? `Hola, vengo del servicio: ${service}. Me gustaría más información.` : 'Hola, me gustaría más información.'
+    return `https://wa.me/${waPhone}?text=${encodeURIComponent(msg)}`
+  }
   
   // Social Media Animation
   const socialPosts = [

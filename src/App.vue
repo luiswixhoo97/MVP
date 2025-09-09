@@ -1,42 +1,59 @@
 <template>
   <div class="min-h-screen bg-white overflow-x-hidden">
-     Header 
+
     <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
-      <nav class="container mx-auto px-6 py-4">
+      <nav class="container mx-auto px-4 py-0">
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-2">
-            <img src="/mvp_logo.svg" alt="MVP DIGITAL" class="h-10 w-auto transform origin-left scale-125 sm:scale-125 md:scale-150 lg:scale-150" />
-            
+            <img src="/mvp_logo.svg" alt="MVP DIGITAL" class="h-24 sm:h-28 md:h-32 lg:h-36 xl:h-40 w-auto" />
           </div>
           
-          <div class="hidden md:flex items-center space-x-8">
-            <a href="#inicio" class="text-gray-700 hover:text-purple-600 transition-colors">Inicio</a>
-            <a href="#servicios" class="text-gray-700 hover:text-purple-600 transition-colors">Servicios</a>
-            <a href="#nosotros" class="text-gray-700 hover:text-purple-600 transition-colors">Nosotros</a>
-            <a href="#contacto" class="text-gray-700 hover:text-purple-600 transition-colors">Contacto</a>
+          <div class="hidden md:flex items-center space-x-10">
+            <a href="#inicio" class="text-gray-800 hover:text-purple-600 transition-colors font-semibold text-lg md:text-xl lg:text-2xl">Inicio</a>
+            <a href="#servicios" class="text-gray-800 hover:text-purple-600 transition-colors font-semibold text-lg md:text-xl lg:text-2xl">Servicios</a>
+            <a href="#nosotros" class="text-gray-800 hover:text-purple-600 transition-colors font-semibold text-lg md:text-xl lg:text-2xl">Nosotros</a>
+            <a href="#contacto" class="text-gray-800 hover:text-purple-600 transition-colors font-semibold text-lg md:text-xl lg:text-2xl">Contacto</a>
           </div>
           
-          <button class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-            Cotizar Ahora
-          </button>
+          <div class="flex items-center gap-3">
+            <a href="https://wa.me/523312345678?text=Hola,%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." target="_blank" class="hidden md:inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 md:px-10 md:py-4 rounded-xl text-lg md:text-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              <span>Contactanos</span>
+            </a>
+            <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="md:hidden inline-flex items-center justify-center w-14 h-14 rounded-xl border border-gray-200 text-gray-700">
+              <span v-if="!isMobileMenuOpen" class="text-2xl">☰</span>
+              <span v-else class="text-2xl">✕</span>
+            </button>
+          </div>
+        </div>
+        <div v-if="isMobileMenuOpen" class="md:hidden mt-3">
+          <div class="flex flex-col gap-2 bg-white rounded-xl border border-gray-100 p-5 shadow">
+            <a href="#inicio" @click="isMobileMenuOpen=false" class="py-3 text-gray-700 hover:text-purple-600 transition-colors text-xl font-semibold">Inicio</a>
+            <a href="#servicios" @click="isMobileMenuOpen=false" class="py-3 text-gray-700 hover:text-purple-600 transition-colors text-xl font-semibold">Servicios</a>
+            <a href="#nosotros" @click="isMobileMenuOpen=false" class="py-3 text-gray-700 hover:text-purple-600 transition-colors text-xl font-semibold">Nosotros</a>
+            <a href="#contacto" @click="isMobileMenuOpen=false" class="py-3 text-gray-700 hover:text-purple-600 transition-colors text-xl font-semibold">Contacto</a>
+            <a href="https://wa.me/523312345678?text=Hola,%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." target="_blank" class="mt-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-4 rounded-xl text-xl font-bold shadow-lg">Contactanos</a>
+          </div>
         </div>
       </nav>
     </header>
 
-     Hero Section 
-    <section id="inicio" class="pt-32 lg:pt-40 pb-20 relative">
+     
+    <section id="inicio" class="pt-32 lg:pt-40 mt-30
+     pb-20 relative">
       <!-- ReactBits-like Aurora/Beams background -->
       <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div class="absolute -top-32 -left-32 w-[36rem] h-[36rem] bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 rounded-full blur-3xl opacity-30 animate-blob"></div>
         <div class="absolute top-1/4 -right-20 w-[28rem] h-[28rem] bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-3xl opacity-25 animate-blob animation-delay-2000"></div>
         <div class="absolute -bottom-20 left-1/3 w-[32rem] h-[32rem] bg-gradient-to-r from-pink-500 to-orange-500 rounded-full blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
+      <!-- Scrim de contraste para legibilidad del título (solo desktop) -->
+      <div class="hidden lg:block absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-white via-white/85 to-transparent z-10 pointer-events-none"></div>
       <div class="container mx-auto px-8 mt-4">
-        <div class="flex flex-col lg:flex-row items-start lg:items-center gap-10 lg:gap-14 xl:gap-24">
-          <div class="space-y-7 animate-fade-in-up self-start flex-1 max-w-3xl">
-            <h1 class="text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tight">
-              <span class="text-gray-900 reveal-up block whitespace-nowrap">La nueva generación del</span>
-              <span class="block bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent reveal-up delay-200 whitespace-nowrap">
+        <div class="flex flex-col lg:flex-row items-center xl:gap-24">
+          <div class="space-y-7 animate-fade-in-up flex-1 max-w-3xl relative z-20 mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tight text-center lg:text-left">
+              <span class="text-gray-900 reveal-up block lg:whitespace-nowrap">La nueva generación del</span>
+              <span class="block bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent reveal-up delay-200 lg:whitespace-nowrap">
                 <TextType
                   text="Marketing Digital"
                   :typingSpeed="75"
@@ -46,31 +63,24 @@
                   :loop="true"
                 />
               </span>
-              <span class="text-gray-900 font-extrabold reveal-up delay-400 block whitespace-nowrap">en México</span>
+              <span class="text-gray-900 font-extrabold reveal-up delay-400 block lg:whitespace-nowrap">en México</span>
             </h1>
             
-            <p class="text-xl text-muted-foreground mb-8 text-pretty max-w-2xl lg:mx-0 mx-auto reveal-up delay-600">
+            <p class="text-xl text-muted-foreground mb-8 text-pretty max-w-2xl lg:mx-0 mx-auto reveal-up delay-600 text-center lg:text-left">
               Conectamos marcas con audiencias a través de estrategias auténticas, creativas y efectivas. Somos especialistas en emprendedores y PYMEs que buscan crecer, destacar y convertir.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4">
-              <button class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                Comenzar Proyecto
-              </button>
-              <button class="border-2 border-purple-500 text-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-50 transition-all duration-300">
-                Ver Portfolio
-              </button>
-            </div>
+            
           </div>
 
-          <div class="relative self-start lg:self-auto animate-fade-in-right w-fit lg:ml-55 xl:ml-70 2xl:ml-80 shrink-0 scale-[1.03] lg:scale-125 lg:-mt-12 xl:-mt-12">
+          <div class="relative z-0 self-start lg:self-auto animate-fade-in-right w-fit hidden md:block  xl:ml-20 2xl:ml-32 shrink-0 scale-[1.03] lg:scale-125 lg:-mt-12 xl:-mt-12">
             <PhoneShowcase />
           </div>
         </div>
       </div>
     </section>
 
-     Historia Section 
+   
     <section id="historia" class="py-20">
       <div class="container mx-auto px-6">
         <div class="text-center mb-14">
@@ -81,8 +91,8 @@
         </div>
 
         <div class="grid lg:grid-cols-2 gap-10 items-stretch">
-          <!-- Columna izquierda -->
-          <div class="bg-white rounded-2xl shadow-xl p-7 lg:p-9 h-full">
+          <!-- Columna izquierda (MVP) → segundo en móvil, primero en desktop -->
+          <div class="bg-white rounded-2xl shadow-xl p-7 lg:p-9 h-full order-2 lg:order-1">
             <h3 class="text-2xl font-extrabold text-gray-900 mb-2">MVP DIGITAL</h3>
             <p class="text-base text-gray-500 mb-6">Agencia de marketing integral</p>
             <p class="text-gray-700 text-base leading-relaxed mb-6">Nace de la visión estratégica de nuestro CEO, quien tras liderar campañas para grandes marcas en México decidió crear una agencia que conectara a las marcas con el mundo digital y tradicional de manera auténtica, estratégica y efectiva.</p>
@@ -96,10 +106,10 @@
             </div>
           </div>
 
-          <!-- Columna derecha -->
-          <div class="space-y-6">
-            <!-- Stats aligned cards -->
-            <div class="grid grid-cols-3 gap-5 mb-3 items-stretch">
+          <!-- Columna derecha → primero en móvil, segundo en desktop -->
+          <div class="space-y-6 flex flex-col order-1 lg:order-2">
+            <!-- Stats aligned cards (1 col en móvil) -->
+            <div ref="histStatsRef" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mb-3 items-stretch order-1">
               <div class="bg-white rounded-xl shadow-lg p-7 text-center flex flex-col justify-center min-h-[110px]">
                 <div class="text-5xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">{{ histYears }}+</div>
                 <div class="text-sm text-gray-600 mt-1">Años de experiencia</div>
@@ -114,8 +124,8 @@
               </div>
             </div>
 
-            <!-- Misión -->
-            <div class="bg-white rounded-2xl shadow-xl p-7">
+            <!-- Misión (tercero en móvil, segundo en desktop) -->
+            <div class="bg-white rounded-2xl shadow-xl p-7 order-3 lg:order-2">
               <div class="flex items-center gap-4 mb-3">
                 <span class="w-10 h-10 rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 inline-flex items-center justify-center text-white">🎯</span>
                 <h4 class="text-xl font-extrabold text-gray-900">Nuestra Misión</h4>
@@ -123,8 +133,8 @@
               <p class="text-gray-700 text-base leading-relaxed">Consolidar la presencia digital de marcas nacientes y posicionadas mediante estrategias efectivas, conectando con las audiencias correctas en México, USA y Latinoamérica.</p>
             </div>
 
-            <!-- Visión -->
-            <div class="bg-white rounded-2xl shadow-xl p-7">
+            <!-- Visión (segundo en móvil, tercero en desktop) -->
+            <div class="bg-white rounded-2xl shadow-xl p-7 order-2 lg:order-3">
               <div class="flex items-center gap-4 mb-3">
                 <span class="w-10 h-10 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 inline-flex items-center justify-center text-white">📈</span>
                 <h4 class="text-xl font-extrabold text-gray-900">Nuestra Visión</h4>
@@ -136,104 +146,19 @@
       </div>
     </section>
 
-     Services Section 
+     
     <section id="servicios" class="py-0">
       <ServicesSection />
     </section>
 
-     Valores Section 
+   
     <ValuesSection />
 
-     About Section 
-    <section id="nosotros" class="py-20">
-      <div class="container mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div class="space-y-8">
-            <h2 class="--text-4xl lg:text-5xl font-bold">
-              <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Sobre MVP DIGITAL
-              </span>
-            </h2>
-            
-            <p class="text-lg text-gray-600 leading-relaxed">
-              Somos una agencia de marketing digital con sede en Guadalajara, México. 
-              Nos especializamos en crear estrategias digitales que impulsan el crecimiento 
-              de empresas y emprendedores.
-            </p>
-            
-            <div class="space-y-4">
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                  <span class="text-white font-bold">✓</span>
-                </div>
-                <span class="text-lg text-gray-700">+5 años de experiencia</span>
-              </div>
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                  <span class="text-white font-bold">✓</span>
-                </div>
-                <span class="text-lg text-gray-700">+100 proyectos exitosos</span>
-              </div>
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                  <span class="text-white font-bold">✓</span>
-                </div>
-                <span class="text-lg text-gray-700">Equipo especializado</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="relative">
-            <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl p-8 text-white">
-              <h3 class="text-2xl font-bold mb-4">Nuestra Misión</h3>
-              <p class="text-lg opacity-90 mb-6">
-                Ayudar a empresas y emprendedores a alcanzar sus objetivos comerciales 
-                a través de estrategias de marketing digital innovadoras y efectivas.
-              </p>
-              
-              <h3 class="text-2xl font-bold mb-4">Nuestra Visión</h3>
-              <p class="text-lg opacity-90">
-                Ser la agencia de marketing digital líder en México, reconocida por 
-                nuestra creatividad, resultados y compromiso con el éxito de nuestros clientes.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <FloatingContacts />
 
-     Contact Section 
-    <section id="contacto" class="py-20 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-8">
-          ¿Listo para impulsar tu negocio?
-        </h2>
-        <p class="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
-          Contáctanos hoy y descubre cómo podemos ayudarte a alcanzar tus objetivos digitales
-        </p>
-        
-        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-          <div class="flex items-center space-x-3 text-white">
-            <span class="text-2xl">📧</span>
-            <span class="text-lg">mvpdigital.gdl@gmail.com</span>
-          </div>
-          <div class="flex items-center space-x-3 text-white">
-            <span class="text-2xl">📱</span>
-            <span class="text-lg">+52 33 1234 5678</span>
-          </div>
-          <div class="flex items-center space-x-3 text-white">
-            <span class="text-2xl">📍</span>
-            <span class="text-lg">Guadalajara, México</span>
-          </div>
-        </div>
-        
-        <button class="bg-white text-purple-600 px-12 py-4 rounded-full text-lg font-bold hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-          Solicitar Cotización
-        </button>
-      </div>
-    </section>
+   
 
-     Footer 
+   
     <footer class="bg-gray-900 text-white py-12">
       <div class="container mx-auto px-6">
         <div class="grid md:grid-cols-4 gap-8">
@@ -298,7 +223,9 @@ import ServicesSection from './components/ServicesSection.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
 import ValuesSection from './components/ValuesSection.vue'
 import TextType from './components/TextType.vue'
+import FloatingContacts from './components/FloatingContacts.vue'
 
+const isMobileMenuOpen = ref(false)
 const services = ref([
   {
     icon: '🌐',
@@ -336,19 +263,37 @@ const services = ref([
 const histYears = ref(0)
 const histProjects = ref(0)
 const histClients = ref(0)
+const histStatsRef = ref(null)
 
 onMounted(() => {
-  // Animated counters for historia section
-  const duration = 1200
-  const start = performance.now()
-  const animate = (now) => {
-    const p = Math.min(1, (now - start) / duration)
-    histYears.value = Math.floor(12 * p)
-    histProjects.value = Math.floor(500 * p)
-    histClients.value = Math.floor(200 * p)
-    if (p < 1) requestAnimationFrame(animate)
+  // Animated counters when stats are in viewport
+  const runCounters = () => {
+    const duration = 1200
+    const start = performance.now()
+    const animate = (now) => {
+      const p = Math.min(1, (now - start) / duration)
+      histYears.value = Math.floor(12 * p)
+      histProjects.value = Math.floor(500 * p)
+      histClients.value = Math.floor(200 * p)
+      if (p < 1) requestAnimationFrame(animate)
+    }
+    requestAnimationFrame(animate)
   }
-  requestAnimationFrame(animate)
+
+  const target = histStatsRef.value
+  if (!target) {
+    runCounters()
+    return
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        runCounters()
+        io.disconnect()
+      }
+    })
+  }, { threshold: 0.3 })
+  io.observe(target)
 })
 
 onMounted(() => {
